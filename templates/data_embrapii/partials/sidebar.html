@@ -1,0 +1,123 @@
+{% load static %}
+    <!-- Barra Lateral Esquerda -->
+        
+        <!-- Cabeçalho -->
+        <div class="cabecalho">
+            <img src="{% static 'assets\logo\embrapii_desenho.png' %}" alt="Logo Embrapii" class="top-logo">
+            <div class="titulo">
+                <span class="titulo__parte1">data</span><span class="titulo__parte2">pii</span><br>
+            </div><br>
+        </div>
+        
+        <!-- Tabs -->
+        <div class="tabs">
+
+            <!-- Home -->
+            <a class="tab {% if request.resolver_match.url_name == 'home' %}active-tab{% endif %}" href="{% url 'home' %}">
+                <div class="tab-icone">
+                    <i class="material-symbols-outlined" style="font-size: 1.3vw;">home</i>
+                </div>
+                <div class="tab-nome">
+                    Home
+                </div>
+            </a>
+
+            <!-- Projetos Embrapii -->
+            <a class="tab {% if request.resolver_match.url_name == 'projetos' %}active-tab{% endif %}" href="{% url 'projetos' %}">
+                <div class="tab-icone">
+                    <i class="material-symbols-outlined" style="font-size: 1.3vw;">deployed_code</i>
+                </div>
+                <div class="tab-nome">
+                    Projetos
+                </div>
+            </a>
+
+            <!-- Unidades Embrapii -->
+            <a class="tab {% if request.resolver_match.url_name == 'unidades_embrapii' %}active-tab{% endif %}" href="{% url 'unidades_embrapii' %}">
+                <div class="tab-icone">
+                    <i class="material-symbols-outlined" style="font-size: 1.3vw;">adjust</i>
+                </div>
+                <div class="tab-nome">
+                    Unidades Embrapii
+                </div>
+            </a>
+
+            <!-- Centros de Competências -->
+            <a class="tab {% if request.resolver_match.url_name == 'centros_competencias' %}active-tab{% endif %}" href="{% url 'centros_competencias' %}">
+                <div class="tab-icone">
+                    <i class="material-symbols-outlined" style="font-size: 1.3vw;">hub</i>
+                </div>
+                <div class="tab-nome">
+                    Centros de Competência
+                </div>
+            </a>
+            
+            <!-- Dashboards -->
+            <a class="tab {% if request.resolver_match.url_name == 'dashboards' %}active-tab{% endif %}" href="{% url 'dashboards' %}">
+                <div class="tab-icone">
+                    <i class="material-symbols-outlined" style="font-size: 1.3vw;">space_dashboard</i>
+                </div>
+                <div class="tab-nome">
+                    Dashboards
+                </div>
+            </a>
+
+            <!-- Análises Técnicas -->
+            {% with current_url=request.resolver_match.url_name %}
+            <a class="tab {% if request.resolver_match.url_name == 'analises_tecnicas' %}active-tab{% endif %}" href="{% url 'analises_tecnicas' %}">
+            {% endwith %}
+                <div class="tab-icone">
+                    <i class="material-symbols-outlined" style="font-size: 1.3vw;">search_insights</i>
+                </div>
+                <div class="tab-nome">
+                    Análises Técnicas
+                </div>
+            </a>
+
+            <!-- Bases de Dados -->
+            {% with current_url=request.resolver_match.url_name %}
+            <a class="tab {% if request.resolver_match.url_name == 'bases_dados' %}active-tab{% endif %}" href="{% url 'bases_dados' %}">
+            {% endwith %}
+                <div class="tab-icone">
+                    <i class="material-symbols-outlined" style="font-size: 1.3vw;">database</i>
+                </div>
+                <div class="tab-nome">
+                    Bases de Dados
+                </div>
+            </a>  
+
+            <!-- Documentos -->
+            {% with current_url=request.resolver_match.url_name %}
+            <a class="tab {% if request.resolver_match.url_name == 'documentos' %}active-tab{% endif %}" href="{% url 'documentos' %}">
+            {% endwith %}
+                <div class="tab-icone">
+                    <i class="material-symbols-outlined" style="font-size: 1.3vw;">folder</i>
+                </div>
+                <div class="tab-nome">
+                    Documentos
+                </div>
+            </a>
+
+
+    
+        </div>
+
+        <!-- Logout -->
+        <div class="tabs logout">
+            <a class="tab {% if request.resolver_match.url_name == 'mais_opcoes' %}active-tab{% endif %}" href="{% url 'mais_opcoes' %}">
+                <div class="tab-icone">
+                    <span class="material-symbols-outlined">menu</span>
+                </div>
+                <div class="tab-nome">
+                    Mais opções
+                </div>
+            </a>
+            <a class="tab sair" href="{% url 'login' %}">
+                <div class="tab-icone">
+                    <span class="material-symbols-outlined">logout</span>
+                </div>
+                <div class="tab-nome">
+                    Sair
+                </div>
+            </a>
+        </div>
