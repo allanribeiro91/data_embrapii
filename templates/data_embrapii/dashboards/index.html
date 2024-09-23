@@ -1,0 +1,62 @@
+{% extends 'data_embrapii/partials/base_main.html' %}
+{% load static %}
+{% block extra_head %}
+    <!-- CSS Específico -->
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/partials/index_estrutura.css' %}">
+{% endblock %}
+
+{% block content %}    
+
+    <div class="page">
+        
+        <div class="area_titulo">
+           Paineis de Dados
+        </div>
+        
+        <div class="area_conteudo">
+            
+            <div class="area_filtros">
+
+                <div class="area_filtros_filtros">
+
+                    <!-- Status Privacidade -->
+                    {% include "data_embrapii/componentes/select.html" with select_id="filtroStatusPrivacidade" label="Status Privacidade" options=choices_status_privacidade width='160px' %}
+
+                    <!-- Ferramentas -->
+                    {% include "data_embrapii/componentes/select.html" with select_id="filtroFerramenta" label="Ferramenta" options=choices_ferramentas %}
+
+                    <!-- Dono do Produto -->
+                    {% include "data_embrapii/componentes/select.html" with select_id="filtroDonoProduto" label="Dono do Produto" options=choices_dono_produto %}
+
+                    <!-- Fontes dos Dados -->
+                    {% include "data_embrapii/componentes/select.html" with select_id="filtroFontesDados" label="Fontes dos Dados" options=choices_fontes_dados %}
+                    
+                    <button type="button" class="btn btn-secondary" id="limparFiltros">Limpar</button>
+
+                </div>       
+
+                <div class="area_filtros_inserir" id="btnInserirProdutoInformacional">
+                    <i class="material-symbols-outlined" style="font-size: 3vw;">add_circle</i>
+                    Inserir
+                </div>
+                
+            </div>
+            
+            <div class="area_cards">
+                
+                {% for item in infoprodutos %}
+                    {% include "data_embrapii/dashboards/card_infoproduto.html" with titulo=item.titulo tipo_produto=item.tipo_produto status_privacidade=item.status_privacidade data_criacao=item.data_criacao ferramenta=item.ferramenta fonte_dados=item.fonte_dados descricao=item.descricao link=item.link %}
+                {% endfor %}
+    
+            </div>
+        </div>
+      
+    </div>
+
+    <!-- Modais -->
+    {% include 'data_embrapii/dashboards/modal_infoproduto.html' %}
+
+    <!-- Javascript -->
+    <script src="{% static 'js/data_embrapii/produtosInformacionais.js' %}"></script>    
+    
+{% endblock %}

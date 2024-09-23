@@ -1,24 +1,31 @@
 <!-- Modal -->
 {% load static %}
 <style>
-    .tags-column {
-        float: left;
-        width: 33.33%;
-        padding: 5px;
-    }
 
     .custom-modal-width {
-        max-width: 80%;  /* ou qualquer largura que você desejar */
+        max-width: 90%;  /* ou qualquer largura que você desejar */
         font-size: 16px !important;
     }
 
     .modal-content {
         background-color: #10131b;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .modal-body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
     }
 
     .modal-header {
         color: white;
     }
+
 
 </style>
 
@@ -28,10 +35,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Produto Informacional</h5>
-
             </div>
             <div class="modal-body">
-                <!-- As tags serão carregadas aqui pelo script -->
+                {% include "data_embrapii/componentes/accord_log.html" %}
+                {% include "data_embrapii/dashboards/accord_modal_infoproduto.html" %}
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary closeModalButton" data-dismiss="modal" style="background-color: rgb(58, 58, 58); border-color: rgb(58, 58, 58);">Cancelar</button>

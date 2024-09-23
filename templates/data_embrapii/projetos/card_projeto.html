@@ -1,0 +1,66 @@
+{% load static %}
+{% block extra_head %}
+    <!-- CSS Específico -->
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/dashboards/card_infoproduto.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/projetos/card_projeto.css' %}">
+{% endblock %}
+
+
+<div class="card_projeto">
+    
+    <div class="card_projeto_area1">
+        
+        <div class="card_projeto_area1_header">
+            <div class="card_projeto_area1_bola_status">
+                {% if status == "Em andamento" %}
+                    <span class="bolinha" style="background-color: yellow;"></span>
+                {% elif status == "Cancelado" %}
+                    <span class="bolinha" style="background-color: red;"></span> 
+                {% elif status == "Concluído" %}
+                    <span class="bolinha" style="background-color: lightgreen;"></span>
+                {% elif status == "Encerrado" %}
+                    <span class="bolinha" style="background-color: darkgreen;"></span>
+                {% else %}
+                    <span class="bolinha" style="background-color: gray;"></span>
+                {% endif %}
+            </div>
+            
+            <div class="card_projeto_titulo">
+                {{ titulo }}
+            </div>
+        </div>
+        
+        <div class="card_projeto_descricao">
+            
+            <div class="card_projeto_descricao_parte">
+                Unidade Embrapii: {{ unidade_embrapii }}<br>
+                Parceria/Programa: {{ parceria_programa }}<br>
+                TRL Inicial/Final: {{ trl_inicial }}/{{ trl_final }}<br>
+            </div>
+
+            <div class="card_projeto_descricao_parte" data-inicio="{{ data_inicio|date:'Y-m-d' }}" data-termino="{{ data_termino|date:'Y-m-d' }}">
+                Contrato: {{ data_contrato|date:'d/m/Y' }}<br>
+                Início/Fim: {{ data_inicio|date:'d/m/Y' }} a {{ data_termino|date:'d/m/Y' }}<br>
+                Total Dias: {{ total_dias }} <br>
+            </div>
+
+            <div class="card_projeto_descricao_parte">
+                Tecnologia Hab.: {{ tecnologia_habilitadora }}<br>
+                Área de Aplic.: {{ area_aplicacao }}<br>
+                Missão NIB: {{ missoes_cndi }}<br>
+            </div>
+
+           
+        </div>
+    </div>
+
+    <div class="card_projeto_area2">
+        <a href="{{ link }}" target="_blank" style="text-decoration: none; color: inherit; justify-content: center;">
+            <i class="material-symbols-outlined" style="font-size: 3vw; text-align: center;">picture_as_pdf</i><br>
+        </a>
+        <span>Relatório</span>
+    </div>
+    
+    
+</div>
+

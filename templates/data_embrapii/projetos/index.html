@@ -1,0 +1,57 @@
+{% extends 'data_embrapii/partials/base_main.html' %}
+{% load static %}
+{% block extra_head %}
+    <!-- CSS Específico -->
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/dataviz.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/partials/index_estrutura.css' %}">
+{% endblock %}
+
+{% block content %}    
+
+<div class="page">
+        
+    <div class="area_titulo">
+       Projetos Embrapii
+    </div>
+    
+    <div class="area_conteudo">
+        
+        <div class="area_filtros">
+
+            <div class="area_filtros_filtros">
+
+                <!-- Status Privacidade -->
+                {% include "data_embrapii/componentes/select.html" with select_id="filtroStatusPrivacidade" label="Status Privacidade" options=choices_status_privacidade width='160px' %}
+
+                <!-- Ferramentas -->
+                {% include "data_embrapii/componentes/select.html" with select_id="filtroFerramenta" label="Ferramenta" options=choices_ferramentas %}
+
+                <!-- Dono do Produto -->
+                {% include "data_embrapii/componentes/select.html" with select_id="filtroDonoProduto" label="Dono do Produto" options=choices_dono_produto %}
+
+                <!-- Fontes dos Dados -->
+                {% include "data_embrapii/componentes/select.html" with select_id="filtroFontesDados" label="Fontes dos Dados" options=choices_fontes_dados %}
+                
+                <button type="button" class="btn btn-secondary" id="limparFiltros">Limpar</button>
+
+            </div>       
+
+            <div class="area_filtros_inserir" id="btnInserirProdutoInformacional">
+                <i class="material-symbols-outlined" style="font-size: 3vw;">add_circle</i>
+                Inserir
+            </div>
+            
+        </div>
+        
+        <div class="area_cards">
+            
+            {% for item in projetos %}
+                {% include "data_embrapii/projetos/card_projeto.html" with titulo=item.titulo status=item.status unidade_embrapii=item.unidade_embrapii parceria_programa=item.parceria_programa trl_inicial=item.trl_inicial|slice:":1" trl_final=item.trl_final|slice:":1" data_contrato=item.data_contrato data_inicio=item.data_inicio data_termino=item.data_termino total_dias=item.total_dias tecnologia_habilitadora=item.tecnologia_habilitadora area_aplicacao=item.area_aplicacao missoes_cndi=item.missoes_cndi%}
+            {% endfor %}
+
+        </div>
+    </div>
+  
+</div>
+    
+{% endblock %}

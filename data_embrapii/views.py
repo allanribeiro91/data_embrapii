@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 # Importações do App
 from data_embrapii.forms import LoginForm
-from data_embrapii.models import ProdutoInformacional
+from data_embrapii.models import ProdutoInformacional, PortFolio
 from setup.choices import STATUS_PRIVACIDADE, SETORES_EMBRAPII, FERRAMENTAS, FONTES_DADOS
 
 def login(request):
@@ -51,7 +51,13 @@ def home(request):
     return render(request, 'data_embrapii/home.html')
 
 def projetos(request):
-    return render(request, 'data_embrapii/projetos.html')
+
+    projetos = PortFolio.objects.filter(status_view=True).order_by('-data_contrato')[:100]
+
+    conteudo = {
+        'projetos': projetos,
+    }
+    return render(request, 'data_embrapii/projetos/index.html', conteudo)
 
 def unidades_embrapii(request):
     return render(request, 'data_embrapii/unidades_embrapii.html')
@@ -69,7 +75,7 @@ def dashboards(request):
         'choices_dono_produto': SETORES_EMBRAPII,
         'choices_fontes_dados': FONTES_DADOS,
     }
-    return render(request, 'data_embrapii/dashboards.html', conteudo)
+    return render(request, 'data_embrapii/dashboards/index.html', conteudo)
 
 def analises_tecnicas(request):
     return render(request, 'data_embrapii/analises_tecnicas.html')

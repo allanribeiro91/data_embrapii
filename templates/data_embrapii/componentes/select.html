@@ -1,0 +1,15 @@
+{% load static %}
+{% block extra_head %}
+    <!-- CSS Específico -->
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/componentes/select.css' %}">
+{% endblock %}
+
+<div class="form-floating mb-3 select" style="width: {% if width %}{{ width }}{% else %}200px{% endif %};">
+    <select class="form-select select" style="font-size: 0.8rem;" id="{{ select_id }}">
+        <option value=""></option>
+        {% for id, label in options %}
+            <option value="{{ id }}">{{ label }}</option>
+        {% endfor %}
+    </select>
+    <label for="{{ select_id }}" style="font-size: 0.8rem;">{{ label }}</label>
+</div>

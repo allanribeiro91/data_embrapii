@@ -1,0 +1,21 @@
+
+.select {
+    background-color: #1c2537;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 0px !important;
+
+}
+
+.select:focus {
+    background-color: transparent !important; /* Garante que continue transparente ao focar */
+
+    outline: none; /* Remove o contorno padrão ao focar */
+    box-shadow: 0 0 5px 3px rgba(70, 70, 70, 0.5);
+}
+
+.select option {
+    background-color: #1a1d29; /* Opções com fundo ligeiramente transparente */
+
+}

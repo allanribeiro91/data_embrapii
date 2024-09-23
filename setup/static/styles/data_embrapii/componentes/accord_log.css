@@ -1,0 +1,43 @@
+:root {
+    --accordion-color: #737999; /* Definindo uma variável de cor global */
+}
+
+.accordion .accordion-item {
+
+    border: none !important;
+}
+
+.accordion-header {
+    color: white;
+}
+
+.accordion .accordion-item .accordion-button {
+    background-color: var(--accordion-color);
+    color: white;
+    border: none !important;
+}
+
+.accordion-body {
+    background-color:var(--accordion-color)
+}
+
+
+
+.accordion-button:focus{
+    box-shadow: none;
+}
+
+
+
+
+.log_id {
+    width: 100px;
+}
+
+/* .color-dark {
+    background-color: #1c2537 !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 5px !important;
+} */
+

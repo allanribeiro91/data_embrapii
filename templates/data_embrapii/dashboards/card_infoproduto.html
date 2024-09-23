@@ -1,0 +1,38 @@
+{% load static %}
+{% block extra_head %}
+    <!-- CSS Específico -->
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/dashboards/card_infoproduto.css' %}">
+{% endblock %}
+
+
+<div class="box_dataviz" data-status="{{ status_privacidade }}" data-ferramenta="{{ ferramenta }}" data-dono="{{ dono_produto }}" data-fonte="{{ fonte_dados }}">
+    
+    <div class="box_dataviz_area1">
+        <div class="box_dataviz_titulo">
+            <span class="box_dataviz_titulo_titulo">{{ titulo }}</span>
+            <span class="box_dataviz_titulo_subtitulo">{{ tipo_produto }} - {{status_privacidade}}</span>
+        </div>
+        <div class="box_dataviz_descricao">
+            
+            <div class="box_dataviz_descricao_parte1">
+                Data da criação: {{ data_criacao|date:'d/m/Y' }}<br>
+                Responsável Técnico: GED/DPG<br>
+                Ferramenta: {{ ferramenta }}<br>
+                Fonte dos dados: {{ fonte_dados }}<br>
+            </div>
+
+            <div class="box_dataviz_descricao_parte2">
+                {{ descricao }}
+            </div>
+        </div>
+    </div>
+
+    <div class="box_dataviz_area2">
+        <a href="{{ link }}" target="_blank" style="text-decoration: none; color: inherit;">
+            <i class="material-symbols-outlined" style="font-size: 3vw;">open_in_new</i><br>
+            Acessar
+        </a>
+    </div>
+    
+    
+</div>
