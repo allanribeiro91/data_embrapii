@@ -1,0 +1,53 @@
+<!-- Modal -->
+{% load static %}
+<style>
+    .tags-column {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+    }
+
+    .custom-modal-width {
+        max-width: 80%;  /* ou qualquer largura que você desejar */
+        font-size: 16px !important;
+    }
+
+    .modal-content {
+        background-color: #10131b;
+    }
+
+    .modal-header {
+        color: white;
+    }
+
+</style>
+
+<!-- Modal -->
+<div class="modal fade" id="modalProdutosInformacionais" tabindex="-1" role="dialog" >
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable custom-modal-width" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Produto Informacional</h5>
+
+            </div>
+            <div class="modal-body">
+                <!-- As tags serão carregadas aqui pelo script -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary closeModalButton" data-dismiss="modal" style="background-color: rgb(58, 58, 58); border-color: rgb(58, 58, 58);">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="salvarTagsProdutos" style="background-color: #31ad93; border-color: #31ad93;">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+   
+<script>
+    document.querySelectorAll('.closeModalButton').forEach(button => {
+        button.addEventListener('click', function() {
+            $('#tagsModal').modal('hide');
+        });
+    });
+</script>
+
+<!-- <script src="{% static 'js/produtos.js' %}"></script> -->

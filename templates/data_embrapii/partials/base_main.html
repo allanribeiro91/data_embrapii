@@ -31,7 +31,10 @@
     <!-- CSS Específico -->
     <link rel="stylesheet" href="{% static 'styles/data_embrapii/partials/base_main.css' %}">
     <link rel="stylesheet" href="{% static 'styles/data_embrapii/partials/sidebar.css' %}">
-    
+
+    <!-- Extra head -->
+    {% block extra_head %}{% endblock%}
+
 </head>
 
 <body>       

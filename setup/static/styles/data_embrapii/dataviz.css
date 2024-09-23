@@ -1,0 +1,155 @@
+.page_dataviz {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.area_titulo {
+    font-size: 1.5rem;
+    color: white !important;
+    font-weight: bold;
+    
+}
+
+
+
+.area_conteudo {
+    display: grid;
+    grid-template-rows: 30% 70%;
+    gap: 20px;
+
+}
+
+.area_filtros {
+    display: grid;
+    grid-template-columns: 90% 10%;
+
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.area_filtros_inserir{
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.area_filtros_inserir:hover{
+    cursor: pointer;
+}
+
+.area_cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Open Sans', sans-serif;
+    color:white;
+    
+}
+
+.box_dataviz {
+    background-color: rgba(36, 66, 104, 0.219) ;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    height: 25vh;
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+
+    display: grid;
+    grid-template-columns: 89% 10%;
+    gap: 0.8%;
+}
+
+.box_dataviz:hover {
+    /* transform: scale(1.02); */
+}
+
+.box_dataviz_area1 {
+    /* background-color: blue; */
+
+    display: grid;
+    grid-template-rows: 30% 65%;
+    gap: 5%;
+}
+
+.box_dataviz_titulo { 
+    width: 100%;
+
+    line-height: 1.1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-bottom: 1px solid white;
+
+}
+
+.box_dataviz_titulo_titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.box_dataviz_titulo_subtitulo {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.box_dataviz_descricao { 
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+
+}
+
+.box_dataviz_area2 {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.box_dataviz_area2:hover {
+    cursor: pointer;
+}
+
+
+
+.filtro {
+    background-color: #1c2537;
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+
+}
+
+.filtro:focus {
+    background-color: transparent !important; /* Garante que continue transparente ao focar */
+
+    outline: none; /* Remove o contorno padrão ao focar */
+    box-shadow: 0 0 5px 3px rgba(70, 70, 70, 0.5);
+}
+
+.filtro option {
+    background-color: #1a1d29; /* Opções com fundo ligeiramente transparente */
+
+}
+
+.area_filtros_filtros {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10px;
+}
