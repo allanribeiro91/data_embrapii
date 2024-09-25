@@ -1,9 +1,9 @@
-.box_dataviz {
+.card_infoproduto {
     background-color: rgba(36, 66, 104, 0.219) ;
     padding: 20px;
     border-radius: 10px;
     width: 99%;
-    height: 25vh;
+    height: auto;
     transition: transform 0.6s ease, box-shadow 0.3s ease;
 
     display: grid;
@@ -11,7 +11,7 @@
     gap: 0.8%;
 }
 
-.box_dataviz:hover {
+.card_infoproduto:hover {
     transform: scale(1.01);
     background-color: rgba(51, 78, 114, 0.349) ;
 }
@@ -27,7 +27,7 @@
 .box_dataviz_titulo { 
     width: 100%;
 
-    line-height: 1.1;
+    line-height: 1.5;
 
     display: flex;
     flex-direction: column;
@@ -38,19 +38,21 @@
 }
 
 .box_dataviz_titulo_titulo {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
 .box_dataviz_titulo_subtitulo {
     font-style: italic;
     margin-bottom: 10px;
+    font-size: 0.9rem;
 }
 
 .box_dataviz_descricao { 
     width: 100%;
     display: grid;
     grid-template-columns: 30% 70%;
+    font-size: 0.9rem;
 
 }
 

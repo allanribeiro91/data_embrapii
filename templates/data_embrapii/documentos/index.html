@@ -3,10 +3,11 @@
 
 {% block extra_head %}
     {{ block.super }}
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/docuumentos/documentos.css' %}">
 {% endblock %}
 
 {% block titulo_pagina %}
-    Documentos 123
+    Documentos
 {% endblock %}
 
 {% block filtros %}
@@ -26,7 +27,7 @@
 
 {% block cards %}
     {% for item in infoprodutos %}
-        {% include "data_embrapii/dashboards/card_infoproduto.html" with titulo=item.titulo tipo_produto=item.tipo_produto status_privacidade=item.status_privacidade data_criacao=item.data_criacao ferramenta=item.ferramenta fonte_dados=item.fonte_dados descricao=item.descricao link=item.link %}
+    {% include "data_embrapii/dashboards/card_infoproduto.html" with titulo=item.titulo tipo_produto=item.tipo_produto status_privacidade=item.status_privacidade data_criacao=item.data_criacao ferramenta=item.ferramenta fonte_dados=item.fonte_dados descricao=item.descricao link=item.link %}
     {% endfor %}
 {% endblock %}
 

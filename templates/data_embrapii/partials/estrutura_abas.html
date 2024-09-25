@@ -1,0 +1,22 @@
+{% extends 'data_embrapii/partials/base_main.html' %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/partials/estrutura_abas.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="estrutura_abas">
+    <div class="lista_abas">
+        {% for url_name, aba_name in abas.items %}
+            <a class="aba {% if request.resolver_match.url_name == url_name %}active{% endif %}" href="{% url url_name %}">
+                {{ aba_name }}
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="conteudo_aba">
+        {% block conteudo_aba %}{% endblock %}
+    </div>
+</div>
+{% endblock %}

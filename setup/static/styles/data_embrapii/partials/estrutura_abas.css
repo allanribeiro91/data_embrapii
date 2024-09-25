@@ -1,0 +1,49 @@
+.estrutura_abas {
+    display: grid;
+    grid-template-rows: 5% 94%;
+    gap: 1%;
+    width: 100%;
+    height: 100%;
+}
+
+.lista_abas {
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.aba{
+    padding: 0 20px;
+    color: white;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.aba:hover{
+    background-color: #2cad9131;
+    border-bottom: 1px solid #31ad93;
+    cursor: pointer;
+}
+
+.active{
+    border-bottom: 1px solid #31ad93;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+

@@ -1,0 +1,37 @@
+{% extends 'data_embrapii/partials/base_main.html' %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/partials/estrutura_padrao.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="estrutura_padrao">
+    
+    <div class="area_titulo">
+        {% block titulo_pagina %}{% endblock %}
+     </div>
+
+    <div class="area_conteudo">
+
+        <div class="area_filtros">
+
+            <div class="area_filtros_filtros">
+                {% block filtros %}{% endblock %}
+                <button type="button" class="btn btn-secondary" id="limparFiltros">Limpar</button>
+            </div>
+
+            <div class="area_filtros_inserir" id="btnInserir">
+                <i class="material-symbols-outlined" style="font-size: 3vw;">add_circle</i>
+                Inserir
+            </div>
+
+        </div>
+
+        <div class="area_cards">
+            {% block cards %}{% endblock %}
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

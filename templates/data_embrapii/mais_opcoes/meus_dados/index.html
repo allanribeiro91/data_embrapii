@@ -1,0 +1,13 @@
+{% extends "data_embrapii/partials/estrutura_abas.html" %}
+{% load static %}
+
+{% block extra_head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/meus_dados/meus_dados.css' %}">
+{% endblock %}
+
+{% block conteudo_aba %}
+    <div class='page_meus_dados' style="color:white">
+        Meus Dados
+    </div>
+{% endblock %}

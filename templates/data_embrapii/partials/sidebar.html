@@ -104,12 +104,12 @@
 
         <!-- Logout -->
         <div class="tabs logout">
-            <a class="tab {% if request.resolver_match.url_name == 'mais_opcoes' %}active-tab{% endif %}" href="{% url 'mais_opcoes' %}">
+            <a class="tab {% if request.resolver_match.url_name == 'meus_dados' %}active-tab{% endif %}" href="{% url 'meus_dados' %}">
                 <div class="tab-icone">
-                    <span class="material-symbols-outlined">menu</span>
+                    <span class="material-symbols-outlined">person</span>
                 </div>
                 <div class="tab-nome">
-                    Mais opções
+                    Meus Dados
                 </div>
             </a>
             <a class="tab sair" href="{% url 'login' %}">
