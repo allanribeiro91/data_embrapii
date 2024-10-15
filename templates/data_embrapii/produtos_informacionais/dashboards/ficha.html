@@ -1,0 +1,18 @@
+{% extends "data_embrapii/partials/estrutura_abas.html" %}
+{% load static %}
+
+{% block extra_head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/relacoes_mercado/eventos/ficha.css' %}">
+{% endblock %}
+
+{% block conteudo_aba %}
+    <div class='page' style="color:white">
+        {% include "data_embrapii/componentes/box_log.html" %}
+        
+    </div>
+
+    <script src="{% static 'js/utils/common_ficha.js' %}"></script>
+{% endblock %}
+
+

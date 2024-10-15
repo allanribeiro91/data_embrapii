@@ -1,10 +1,10 @@
 :root {
-    --accordion-color: #737999; /* Definindo uma variável de cor global */
+    --accordion-color: #23273d; /* Definindo uma variável de cor global */
 }
 
 .accordion .accordion-item {
-
     border: none !important;
+    background-color: transparent;
 }
 
 .accordion-header {
@@ -17,16 +17,30 @@
     border: none !important;
 }
 
-.accordion-body {
-    background-color:var(--accordion-color)
-}
-
-
 
 .accordion-button:focus{
     box-shadow: none;
 }
 
+.accordion-item {
+    border-radius: 20px;
+}
+
+  .accordion-item:last-of-type > .accordion-header .accordion-button.collapsed {
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.accordion-item:first-of-type > .accordion-header .accordion-button {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.accordion-body {
+    background-color:var(--accordion-color);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
 
 
 

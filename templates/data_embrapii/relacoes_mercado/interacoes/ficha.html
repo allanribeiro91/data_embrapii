@@ -3,11 +3,15 @@
 
 {% block extra_head %}
     {{ block.super }}
-    <link rel="stylesheet" href="{% static 'styles/data_embrapii/meus_dados/index.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/relacoes_mercado/interacoes/ficha.css' %}">
 {% endblock %}
 
 {% block conteudo_aba %}
     <div class='page' style="color:white">
-        Meus Dados
+        Ficha da Interação
     </div>
+
+    <script src="{% static 'js/utils/common_ficha.js' %}"></script>
 {% endblock %}
+
+

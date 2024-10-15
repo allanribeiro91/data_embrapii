@@ -52,8 +52,23 @@
                 </div>
             </a>
             
-            <!-- Dashboards -->
-            <a class="tab {% if request.resolver_match.url_name == 'dashboards' %}active-tab{% endif %}" href="{% url 'dashboards' %}">
+            <!-- Relações com o Mercado -->
+            {% with current_url=request.resolver_match.url_name %}
+            <a class="tab {% if 'rm_eventos' in current_url or 'rm_interacoes' in current_url %}active-tab{% endif %}" href="{% url 'rm_eventos' %}">
+                <div class="tab-icone">
+                    <i class="material-symbols-outlined" style="font-size: 1.3vw;">webhook</i>
+                </div>
+                <div class="tab-nome">
+                    Relações com o mercado
+                </div>
+            </a>
+            {% endwith %}
+
+
+
+            <!-- Produtos Informacionais -->
+            {% with current_url=request.resolver_match.url_name %}
+            <a class="tab {% if 'pinfo_dashboards' in current_url or 'pinfo_relatorios' in current_url or 'pinfo_apresentacoes' in current_url %}active-tab{% endif %}" href="{% url 'pinfo_dashboards' %}">
                 <div class="tab-icone">
                     <i class="material-symbols-outlined" style="font-size: 1.3vw;">space_dashboard</i>
                 </div>
@@ -61,42 +76,9 @@
                     Produtos Informacionais
                 </div>
             </a>
-
-            <!-- Análises Técnicas -->
-            {% with current_url=request.resolver_match.url_name %}
-            <a class="tab {% if request.resolver_match.url_name == 'analises_tecnicas' %}active-tab{% endif %}" href="{% url 'analises_tecnicas' %}">
             {% endwith %}
-                <div class="tab-icone">
-                    <i class="material-symbols-outlined" style="font-size: 1.3vw;">search_insights</i>
-                </div>
-                <div class="tab-nome">
-                    Análises Técnicas
-                </div>
-            </a>
+ 
 
-            <!-- Bases de Dados -->
-            {% with current_url=request.resolver_match.url_name %}
-            <a class="tab {% if request.resolver_match.url_name == 'bases_dados' %}active-tab{% endif %}" href="{% url 'bases_dados' %}">
-            {% endwith %}
-                <div class="tab-icone">
-                    <i class="material-symbols-outlined" style="font-size: 1.3vw;">database</i>
-                </div>
-                <div class="tab-nome">
-                    Bases de Dados
-                </div>
-            </a>  
-
-            <!-- Documentos -->
-            {% with current_url=request.resolver_match.url_name %}
-            <a class="tab {% if request.resolver_match.url_name == 'documentos' %}active-tab{% endif %}" href="{% url 'documentos' %}">
-            {% endwith %}
-                <div class="tab-icone">
-                    <i class="material-symbols-outlined" style="font-size: 1.3vw;">folder</i>
-                </div>
-                <div class="tab-nome">
-                    Documentos
-                </div>
-            </a>
 
 
     

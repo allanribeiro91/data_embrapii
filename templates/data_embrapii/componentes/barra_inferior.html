@@ -1,0 +1,13 @@
+{% load static %}
+{% block extra_head %}
+    <!-- CSS Específico -->
+    <link rel="stylesheet" href="{% static 'styles/data_embrapii/componentes/barra_inferior.css' %}">
+{% endblock %}
+
+<div class="barra_inferior">
+    {% for botao in botoes %}
+        <a class="botao" id="{{ botao }}">
+            {{ botao }}
+        </a>
+    {% endfor %}
+</div>

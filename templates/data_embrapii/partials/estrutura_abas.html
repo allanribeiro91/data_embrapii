@@ -8,15 +8,33 @@
 {% block content %}
 <div class="estrutura_abas">
     <div class="lista_abas">
+
+        <!-- Verifica se há uma aba chamada 'voltar' -->
         {% for url_name, aba_name in abas.items %}
-            <a class="aba {% if request.resolver_match.url_name == url_name %}active{% endif %}" href="{% url url_name %}">
-                {{ aba_name }}
-            </a>
+            {% if aba_name == 'voltar' %}
+                <a class="voltar" href="{% url url_name %}">
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                </a>
+            {% endif %}
+        {% endfor %}
+
+        <!-- Renderiza as demais abas normalmente -->
+        {% for url_name, aba_name in abas.items %}
+            {% if aba_name != 'voltar' %}
+                <a class="aba {% if request.resolver_match.url_name == url_name %}active{% endif %}" href="{% if url_name == '#' %}javascript:void(0);{% else %}{% url url_name %}{% endif %}">
+                    {{ aba_name }}
+                </a>
+            {% endif %}
         {% endfor %}
     </div>
 
     <div class="conteudo_aba">
         {% block conteudo_aba %}{% endblock %}
     </div>
+
+    {% include "data_embrapii/componentes/barra_inferior.html" %}
+
 </div>
 {% endblock %}

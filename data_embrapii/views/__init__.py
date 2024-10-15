@@ -1,5 +1,6 @@
 from .auth_views import login
-from .dashboards_views import dashboards
+from .produtos_informacionais_views import pinfo_relatorios, pinfo_dashboards, pinfo_apresentacoes
 from .projetos_views import projetos
 from .meus_dados_views import meus_dados, meus_logs
-from .geral_views import home, unidades_embrapii, centros_competencias, analises_tecnicas, bases_dados, documentos
+from .relacoes_mercado_views import rm_eventos, rm_interacoes
+from .geral_views import home, unidades_embrapii, centros_competencias, bases_dados, documentos
